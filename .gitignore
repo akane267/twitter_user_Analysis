@@ -1,0 +1,5 @@
+.config.ini
+__pychache__
+org_data/output_user_tweets.csv
+divided_words/divided_words_data.csv
+analyzed_data/scored_data.csv
