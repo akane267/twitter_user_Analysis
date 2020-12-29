@@ -1,5 +1,5 @@
-local_version/.config.ini
-local_version/__pychache__
-local_version/org_data/output_user_tweets.csv
-local_version/divided_words/divided_words_data.csv
+local_version/config.ini
+local_version/__pycache__
 local_version/analyzed_data/scored_data.csv
+local_version/divided_words/divided_words_data.csv
+local_version/org_data/output_user_tweets.csv
