@@ -24,7 +24,7 @@ def import_data(event, context):
     job_config.source_format = bigquery.SourceFormat.CSV
     job_config.write_disposition = bigquery.WriteDisposition.WRITE_APPEND
 
-    uri = 'gs://user_analyzed_tweets_data/' + file_name
+    uri = 'gs://XXX/' + file_name
 
     load_job = client.load_table_from_uri(
         uri, table_ref, job_config=job_config

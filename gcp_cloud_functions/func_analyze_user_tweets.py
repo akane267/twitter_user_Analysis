@@ -175,7 +175,7 @@ def main(event, context):
 
     # inputデータ(String)の取得
     contents = ReadBucketDataToString(
-        'user_tweets_data', file_name)
+        'XXXX', file_name)
     # cast String to DataFrame
     df_twitter_data = StringToDataframe(contents, base_columns)
 
@@ -189,10 +189,10 @@ def main(event, context):
 
     # scored dataをbacketに書き出す
     file_name = 'score/' + now + '_scored_tweets.csv'
-    WriteStringToBucketData('user_analyzed_tweets_data',
+    WriteStringToBucketData('XXX',
                             df_output_scored_data, scored_data_columns, file_name)
 
     # word dataをbacketに書き出す
     file_name = 'word/' + now + '_word.csv'
-    WriteStringToBucketData('user_analyzed_tweets_data',
+    WriteStringToBucketData('XXX',
                             df_output_word_data, word_data_columns, file_name)

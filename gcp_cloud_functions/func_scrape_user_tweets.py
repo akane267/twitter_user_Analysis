@@ -26,9 +26,9 @@ client = storage.Client()
 
 class MyConfig(object):
 
-    bucket_name = 'managed_data'
+    bucket_name = 'XXX'
     file_name = 'config.ini'
-    project_name = 'Sample Project'
+    project_name = 'XXX'
 
     def __init__(self):
         # 設定情報を読み込む
@@ -195,7 +195,7 @@ def ScrapeUserTweets():
         if cnt >= 10:
             break
 
-        # get @EriSirai timeline data to since_id
+        # get user timeline data to since_id
         # (補足)TwitterAPIの仕様上1セッションで最新分から最大200件しか取得できない
         # max_idを指定すると、max_id~since_idのデータを取得できる
         df_tmp_User_tweets_data = GetUesrtimelineTwitterData(
@@ -213,7 +213,7 @@ def ScrapeUserTweets():
         max_id = df_tmp_User_tweets_data.iat[len(
             df_tmp_User_tweets_data) - 1, 1]
 
-    # dataをbacketに書き出す
+    # dataをbucketに書き出す
     file_name = now + '_tweets.csv'
     WriteStringToBucketData('user_tweets_data',
                             df_User_tweets_data, columns, file_name)
