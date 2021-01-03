@@ -1,6 +1,7 @@
 import configparser
 import datetime
 import json
+import sys
 
 from requests_oauthlib import OAuth1Session
 import pandas as pd
@@ -82,12 +83,14 @@ def GetUesrtimelineTwitterData(screen_name, count='20'):
                          access_token, access_secret)
     req = auth.get(url, params=params)
 
-    if req.status_code == 200:
-        timeline = json.loads(req.text)
-        df_tweets_data = ToTweetsDataFrame(timeline)
+    try:
+        req.raise_for_status()
+    except Exception as e:
+        print(e)
+        sys.exit()
 
-    else:
-        raise 'Error: %d' % req.status_code
+    timeline = json.loads(req.text)
+    df_tweets_data = ToTweetsDataFrame(timeline)
 
     return df_tweets_data
 
